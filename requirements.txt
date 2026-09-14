@@ -1,4 +1,8 @@
-pandas>=2.0
-matplotlib>=3.7
-openpyxl>=3.1
-pytest>=7.0
+# Pinned to exact versions (not ranges) for supply-chain safety and
+# reproducibility -- a floating range can silently pull in a newer,
+# potentially compromised release. Bump deliberately via Dependabot PRs
+# (see .github/dependabot.yml) or by hand, not automatically.
+pandas==2.3.3
+matplotlib==3.9.4
+openpyxl==3.1.5
+pytest==8.4.2
