@@ -6,6 +6,8 @@
 
 A regional traffic-safety analysis and program design case study: identify the counties where speeding-related crashes are most concentrated, then design a state DOT–insurer telematics program to bring that down, with the market research and financial model to back it.
 
+**In plain English:** some Pennsylvania counties have far more speeding-related car crashes per person than others. This project uses real government crash records to figure out exactly which ones, then designs a program where the state and a car insurance company team up to offer safer drivers a discount for using a phone app that tracks their driving — the goal being fewer risky crashes and somewhat cleaner driving. It also includes a spreadsheet estimating what running that program would actually cost and save over three years. New to a term like "telematics" or "KPI"? See the [glossary](GLOSSARY.md). Common questions are answered in the [FAQ](FAQ.md).
+
 **The chain, end to end:** [real county crash data](data/) → [risk ranking](analysis/) → [program strategy](strategy/) → [financial model](financial_model/). Every number in the strategy and financial model traces back to the data in this repo — nothing here is a placeholder.
 
 ![RoadRisk at a glance](analysis/figures/roadrisk_at_a_glance.png)
@@ -68,3 +70,9 @@ python3 -m pytest tests/ -v                # validates the analysis pipeline (se
 - The crash data is real but the *program* is a design exercise, not a deployed pilot — the strategy and financial model are written to be handed to a real state DOT / insurer partnership, not a report of one that already exists.
 - The financial model does not shy away from an unflattering result: at conservative assumptions, the insurer's discount cost is not fully offset by claims savings within 3 years, and hitting the 5% population-level KPI with a single insurer partner requires either higher enrollment/effect than a Year-1 pilot can realistically deliver or a multi-carrier consortium. Both findings — and what would change them — are documented on the `ROI Summary` and `Sensitivity` tabs of the financial model.
 - See [`data/SOURCES.md`](data/SOURCES.md) for what the underlying crash data does and doesn't capture (officer-coded speeding flags, not telematics-derived; most recent complete year is 2020 in the public dataset).
+
+## More docs
+
+- [`GLOSSARY.md`](GLOSSARY.md) — plain-English definitions of the industry terms used throughout (telematics, UBI, KPI, loss ratio, etc.).
+- [`FAQ.md`](FAQ.md) — answers to the questions a reviewer usually has (is this real, who is it for, why does the ROI look negative, can I reuse it).
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — how this repo is maintained and how to suggest a change.
