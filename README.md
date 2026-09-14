@@ -64,6 +64,7 @@ python3 -m pytest tests/ -v                # validates the analysis pipeline (se
 - **The Excel model uses live formulas, not hardcoded numbers.** `build_model.py` writes `=` formulas referencing labeled, commented assumption cells, so changing one input recalculates the whole 8-tab workbook — see `financial_model/build_model.py`.
 - **Tested and CI'd:** `tests/` checks the risk-ranking logic (county count, no negative/NaN rates, expected top-risk counties) and runs on every push via GitHub Actions (badge at the top of this file). Public repos get free CI minutes, so this costs nothing to keep running.
 - **Stack:** Python (pandas, matplotlib, openpyxl), pytest, GitHub Actions. No paid APIs or services anywhere in the pipeline — everything reads from static files already in this repo.
+- **Dependencies pinned to exact versions**, with [Dependabot](.github/dependabot.yml) opening weekly PRs for updates rather than silently floating to whatever's newest. See [`SECURITY.md`](SECURITY.md) for the full security posture.
 
 ## Honest limitations
 
@@ -76,3 +77,4 @@ python3 -m pytest tests/ -v                # validates the analysis pipeline (se
 - [`GLOSSARY.md`](GLOSSARY.md) — plain-English definitions of the industry terms used throughout (telematics, UBI, KPI, loss ratio, etc.).
 - [`FAQ.md`](FAQ.md) — answers to the questions a reviewer usually has (is this real, who is it for, why does the ROI look negative, can I reuse it).
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — how this repo is maintained and how to suggest a change.
+- [`SECURITY.md`](SECURITY.md) — this repo's security scope and what's already in place.

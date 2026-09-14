@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Python dependencies pinned in requirements.txt
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  # Actions used in .github/workflows/tests.yml (actions/checkout, actions/setup-python)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
