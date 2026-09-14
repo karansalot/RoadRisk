@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# Least-privilege default: this workflow only reads the repo and runs tests,
+# it never needs to write anything, so the token gets read-only access.
+permissions:
+  contents: read
+
 jobs:
   pytest:
     runs-on: ubuntu-latest
